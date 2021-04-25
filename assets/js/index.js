@@ -22,14 +22,14 @@ function GetUserInfo(){
         success: function (res) {
             console.log(res);
             // 判断是否获取成功
-            
+            if(res.status !== 0){
+                return layui.layer.msg(res.message,{icon:5})
+            }
+            layui.layer.msg(res.message,{icon:5})
             // 渲染用户头像
             renderAvatar(res.data)
-                     
-          
         },
     });
-    
 }
    // 渲染用户信息封装函数
 function renderAvatar(user){
