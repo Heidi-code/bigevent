@@ -27,7 +27,7 @@ $(function(){
         }
         $.ajax({
           type: "post",
-          url: "http://api-breakingnews-web.itheima.net/api/reguser",
+          url: "/api/reguser",
           data: data,
           success: function (res) {
             console.log(res);
@@ -49,13 +49,13 @@ $(function(){
       // 阻止表单默认行为
        e.preventDefault()
        var data = {
-         username: $('#form_login [name="username"]').val().trim(),
-         password: $('#form_login [name="password"]').val().trim()
+         username: $('#form_login [name=username]').val().trim(),
+         password: $('#form_login [name=password]').val().trim()
        }
       //  ajax请求
       $.ajax({
         type: "post",
-        url: "http://api-breakingnews-web.itheima.net/api/login",
+        url: "/api/login",
         data: data,
         success: function (res) {
           console.log(res);
